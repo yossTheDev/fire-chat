@@ -1768,6 +1768,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cookie@npm:^0.7.0":
+  version: 0.7.2
+  resolution: "cookie@npm:0.7.2"
+  checksum: 10c0/9596e8ccdbf1a3a88ae02cf5ee80c1c50959423e1022e4e60b91dd87c622af1da309253d8abdb258fb5e3eacb4f08e579dc58b4897b8087574eee0fd35dfa5d2
+  languageName: node
+  linkType: hard
+
 "cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.2":
   version: 7.0.5
   resolution: "cross-spawn@npm:7.0.5"
@@ -1897,6 +1904,7 @@ __metadata:
     firebase: "npm:^11.0.1"
     firebase-react-hooks: "npm:^0.8.0"
     next: "npm:15.0.3"
+    next-firebase-auth-edge: "npm:^1.8.2"
     postcss: "npm:^8"
     react: "npm:19.0.0-rc-66855b96-20241106"
     react-dom: "npm:19.0.0-rc-66855b96-20241106"
@@ -3290,6 +3298,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jose@npm:^5.6.3":
+  version: 5.9.6
+  resolution: "jose@npm:5.9.6"
+  checksum: 10c0/d6bcd8c7d655b5cda8e182952a76f0c093347f5476d74795405bb91563f7ab676f61540310dd4b1531c60d685335ceb600571a409551d2cbd2ab3e9f9fbf1e4d
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -3656,6 +3671,19 @@ __metadata:
   version: 0.6.4
   resolution: "negotiator@npm:0.6.4"
   checksum: 10c0/3e677139c7fb7628a6f36335bf11a885a62c21d5390204590a1a214a5631fcbe5ea74ef6a610b60afe84b4d975cbe0566a23f20ee17c77c73e74b80032108dea
+  languageName: node
+  linkType: hard
+
+"next-firebase-auth-edge@npm:^1.8.2":
+  version: 1.8.2
+  resolution: "next-firebase-auth-edge@npm:1.8.2"
+  dependencies:
+    cookie: "npm:^0.7.0"
+    encoding: "npm:^0.1.13"
+    jose: "npm:^5.6.3"
+  peerDependencies:
+    next: ^14.0.0 || 15.0.0-rc.0 || ^15.0.0
+  checksum: 10c0/80556d98ed575199d35438df8ff1b0ed8c446c1ca8cd6f580a1326416eb22ab21a6663d1402a8180ce570baa7a6a6fe2182ae5c813bed9e39d9c299b0a430e56
   languageName: node
   linkType: hard
 
