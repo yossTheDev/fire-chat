@@ -11,7 +11,7 @@ export default function Page() {
 
   useEffect(() => {
     if (user) {
-      router.push("/profile");
+      router.push("/");
     }
   }, [user, router]);
 
@@ -40,30 +40,15 @@ export default function Page() {
           className="mt-6 w-full py-2 px-4 flex items-center justify-center gap-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition duration-300"
         >
           <svg
-            className="w-5 h-5"
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fab"
-            data-icon="google"
+            className="size-5"
             role="img"
+            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 488 512"
           >
+            <title>Google</title>
             <path
               fill="currentColor"
-              d="M488 261.8c0-17.8-1.5-35.6-4.7-52.7H248v99.8h135.7c-5.9 31.9-23.4 58.8-49.8 76.7l-.5 3.5 72.5 56.5 5 1c32.5-30.1 51.1-74.6 51.1-127.8z"
-            />
-            <path
-              fill="currentColor"
-              d="M250 484c64.8 0 119.2-21.5 158.9-58.3l-76-59c-21.7 14.5-49.4 23.2-82.9 23.2-63.6 0-117.7-43-137.1-101.2l-2.8.2-74.4 58.4-1.3 3.1c38.4 76 117.7 133.8 215.6 133.8z"
-            />
-            <path
-              fill="currentColor"
-              d="M112.9 295.5c-5.3-15.9-8.3-32.8-8.3-50.5s3-34.6 8.3-50.5l-74.4-58.4c-15.8 31.7-24.9 67.4-24.9 108.9s9.1 77.1 24.9 108.9l74.4-58.4z"
-            />
-            <path
-              fill="currentColor"
-              d="M250 97.8c35.4 0 67 12.2 92.2 36.2l69.1-68.7C345.5 27.8 299.9 7 250 7 152.1 7 72.8 64.8 34.4 140.8l74.4 58.4C132.3 143.8 186.4 97.8 250 97.8z"
+              d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"
             />
           </svg>
           Continuar con Google
