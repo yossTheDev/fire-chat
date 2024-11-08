@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
@@ -58,7 +59,7 @@ export default function ChatRoom() {
 
   return (
     <div className="flex flex-col h-full w-full p-4 bg-gray-100 dark:bg-neutral-900 dark:border-neutral-950 shadow-md">
-      <div className="flex-1 overflow-y-auto mb-4 space-y-2">
+      <div className="flex-1 overflow-y-auto max-h-[80%] mb-4 space-y-2">
         {messages.map((message) => (
           <motion.div
             key={message.id}

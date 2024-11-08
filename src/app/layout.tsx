@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-hidden h-screen flex flex-col`}
       >
         <ThemeProvider attribute="data-mode">
           <AuthProvider>
