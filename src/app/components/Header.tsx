@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../context/authProvider";
+import { ThemeToggle } from "./ThemeToggle";
 
 export default function Header() {
   const { user, logout } = useAuth();
@@ -14,20 +15,11 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-blue-600 p-4 shadow-md">
+    <header className="bg-neutral-200 p-4 shadow-md dark:text-white text-neutral-800">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
-        <Link href="/" className="text-white text-2xl font-bold">
+        <Link href="/" className="text-2xl font-bold">
           MiApp
         </Link>
-
-        <nav className="flex items-center gap-4">
-          <Link href="/chat" className="text-white hover:text-blue-200">
-            Chat
-          </Link>
-          <Link href="/profile" className="text-white hover:text-blue-200">
-            Perfil
-          </Link>
-        </nav>
 
         <div className="flex items-center gap-3">
           {user ? (
@@ -57,6 +49,8 @@ export default function Header() {
               Iniciar sesión
             </Link>
           )}
+
+          <ThemeToggle></ThemeToggle>
         </div>
       </div>
     </header>
