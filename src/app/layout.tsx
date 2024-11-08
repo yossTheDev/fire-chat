@@ -4,6 +4,7 @@ import "./globals.css";
 import { AuthProvider } from "./context/authProvider";
 import Header from "./components/Header";
 import { ThemeProvider } from "next-themes";
+import { fontSans } from "@/lib/fonts";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +30,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-hidden h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} ${fontSans.variable} ${fontSans.className} antialiased overflow-hidden h-screen flex flex-col`}
       >
         <ThemeProvider attribute="data-mode">
           <AuthProvider>
