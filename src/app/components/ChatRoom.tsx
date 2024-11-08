@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -11,11 +12,11 @@ import {
 } from "firebase/firestore";
 import { useAuth } from "../context/authProvider";
 import { db } from "../lib/firebaseConfig";
+import { Motion, spring } from "react-motion";
 
 interface Message {
   id: string;
   text: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   createdAt: any;
   uid: string;
   displayName: string;
@@ -59,17 +60,36 @@ export default function ChatRoom() {
     <div className="flex flex-col h-full w-full p-4 bg-gray-100 dark:bg-neutral-900 dark:border-neutral-950 shadow-md">
       <div className="flex-1 overflow-y-auto mb-4">
         {messages.map((message) => (
-          <div
+          <Motion
             key={message.id}
-            className={`p-2 rounded-lg mb-2 max-w-xs ${
-              message.uid === user?.uid
-                ? "bg-blue-500 text-white self-end"
-                : "bg-gray-300 text-black self-start"
-            }`}
+            defaultStyle={{
+              opacity: 0,
+              x: message.uid === user?.uid ? 100 : -100,
+            }}
+            style={{
+              opacity: spring(1, { stiffness: 60, damping: 10 }),
+              x: spring(0, { stiffness: 60, damping: 10 }),
+            }}
           >
-            <span className="font-semibold">{message.displayName}: </span>
-            <span>{message.text}</span>
-          </div>
+            {(style) => (
+              <div
+                className={`p-3 mb-2 max-w-xs text-sm ${
+                  message.uid === user?.uid
+                    ? "bg-blue-500 text-white self-end rounded-tl-lg rounded-bl-lg rounded-br-lg"
+                    : "bg-gray-300 text-black self-start rounded-tr-lg rounded-br-lg rounded-bl-lg"
+                }`}
+                style={{
+                  opacity: style.opacity,
+                  transform: `translateX(${style.x}px)`,
+                }}
+              >
+                <span className="font-semibold block">
+                  {message.displayName}
+                </span>
+                <span>{message.text}</span>
+              </div>
+            )}
+          </Motion>
         ))}
       </div>
       <form onSubmit={handleSendMessage} className="flex">
