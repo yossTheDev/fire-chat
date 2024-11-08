@@ -15,7 +15,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-neutral-200 p-4 shadow-md dark:text-white text-neutral-800">
+    <header className="bg-neutral-200 dark:bg-neutral-900 p-4 shadow-md dark:text-white text-neutral-800">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold">
           MiApp

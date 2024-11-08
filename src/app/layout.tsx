@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden h-screen flex flex-col`}
       >
-        <ThemeProvider>
+        <ThemeProvider attribute="data-mode">
           <AuthProvider>
             <Header></Header>
             {children}
