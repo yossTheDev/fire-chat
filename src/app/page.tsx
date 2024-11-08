@@ -2,8 +2,8 @@ import ChatRoom from "./components/ChatRoom";
 
 export default function Home() {
   return (
-    <div className="items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col">
+    <div className="flex h-screen w-screen min-h-screen font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col w-full">
         <ChatRoom></ChatRoom>
       </main>
     </div>
