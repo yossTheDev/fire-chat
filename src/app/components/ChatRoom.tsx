@@ -56,7 +56,7 @@ export default function ChatRoom() {
   };
 
   return (
-    <div className="flex flex-col h-full w-full p-4 bg-gray-100 rounded-md shadow-md">
+    <div className="flex flex-col h-full w-full p-4 bg-gray-100 dark:bg-neutral-900 dark:border-neutral-950 shadow-md">
       <div className="flex-1 overflow-y-auto mb-4">
         {messages.map((message) => (
           <div

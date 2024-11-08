@@ -15,10 +15,10 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-neutral-200 dark:bg-neutral-900 p-4 shadow-md dark:text-white text-neutral-800">
+    <header className="bg-neutral-200 dark:bg-neutral-900 border-b-[1px] border-neutral-950/80 p-4 shadow-md dark:text-white text-neutral-800">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold">
-          MiApp
+          FireChat
         </Link>
 
         <div className="flex items-center gap-3">
@@ -34,7 +34,7 @@ export default function Header() {
                   className="rounded-full"
                 />
               )}
-              <span className="text-white hidden sm:inline">
+              <span className=" hidden sm:inline">
                 {user.displayName || "Usuario"}
               </span>
               <button
