@@ -93,7 +93,7 @@ export default function ChatRoom() {
               </>
 
               <div
-                className={`flex flex-col gap-2 p-3 max-w-xs text-sm ${
+                className={`flex flex-col gap-2 p-3  text-sm ${
                   message.uid === user?.uid
                     ? "bg-blue-500 text-white self-end rounded-tl-lg rounded-bl-lg rounded-br-lg"
                     : "bg-gray-300 text-black self-start rounded-tr-lg rounded-br-lg rounded-bl-lg"
