@@ -21,6 +21,7 @@ interface Message {
   createdAt: any;
   uid: string;
   displayName: string;
+  avatar: string;
 }
 
 export default function ChatRoom() {
@@ -50,6 +51,7 @@ export default function ChatRoom() {
         createdAt: serverTimestamp(),
         uid: user.uid,
         displayName: user.displayName,
+        avatar: user.photoURL,
       });
       setNewMessage("");
     } catch (error) {
@@ -69,14 +71,39 @@ export default function ChatRoom() {
             }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ type: "spring", stiffness: 70, damping: 12 }}
-            className={`p-3 max-w-xs text-sm ${
-              message.uid === user?.uid
-                ? "bg-blue-500 text-white self-end rounded-tl-lg rounded-bl-lg rounded-br-lg"
-                : "bg-gray-300 text-black self-start rounded-tr-lg rounded-br-lg rounded-bl-lg"
-            }`}
           >
-            <span className="font-semibold block">{message.displayName}</span>
-            <span>{message.text}</span>
+            <div className="flex gap-2">
+              <>
+                {message.uid !== user?.uid && (
+                  <>
+                    {!message.avatar ? (
+                      <div className="flex size-12 text-2xl font-bold bg-neutral-800 rounded-full text-center justify-center items-center">
+                        <span> {message.displayName.slice(0, 1)}</span>
+                      </div>
+                    ) : (
+                      <img
+                        className="size-12 rounded-full"
+                        src={message.avatar}
+                        alt="User Photo"
+                      ></img>
+                    )}
+                  </>
+                )}
+              </>
+
+              <div
+                className={`flex flex-col gap-2 p-3 max-w-xs text-sm ${
+                  message.uid === user?.uid
+                    ? "bg-blue-500 text-white self-end rounded-tl-lg rounded-bl-lg rounded-br-lg"
+                    : "bg-gray-300 text-black self-start rounded-tr-lg rounded-br-lg rounded-bl-lg"
+                }`}
+              >
+                <span className="font-semibold block">
+                  {message.displayName}
+                </span>
+                <span>{message.text}</span>
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>
