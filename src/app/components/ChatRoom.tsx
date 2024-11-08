@@ -14,6 +14,7 @@ import {
 import { useAuth } from "../context/authProvider";
 import { db } from "../lib/firebaseConfig";
 import { motion } from "framer-motion";
+import { Send } from "lucide-react";
 
 interface Message {
   id: string;
@@ -113,13 +114,13 @@ export default function ChatRoom() {
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
           placeholder="Escribe un mensaje..."
-          className="flex-1 p-2 border rounded-l-lg"
+          className="flex-1 p-2 border dark:border-neutral-950 rounded-l-lg dark:text-white"
         />
         <button
           type="submit"
-          className="p-2 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600"
+          className="flex items-center text-sm gap-2 py-2 px-4 justify-center bg-blue-500 text-white rounded-r-lg hover:bg-blue-600"
         >
-          Enviar
+          <Send className="size-6"></Send>
         </button>
       </form>
     </div>
