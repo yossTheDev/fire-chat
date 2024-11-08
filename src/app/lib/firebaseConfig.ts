@@ -1,4 +1,3 @@
-import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
@@ -21,6 +20,5 @@ if (!firebaseApp) {
 
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
-const analytics = getAnalytics(firebaseApp);
 
-export { firebaseApp, auth, db, analytics };
+export { firebaseApp, auth, db };
