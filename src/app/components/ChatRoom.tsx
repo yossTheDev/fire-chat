@@ -125,7 +125,7 @@ export default function ChatRoom() {
           />
           <button
             type="submit"
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 hover:bg-blue-600 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-md"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#ff833c] hover:bg-[#ff633c] text-white w-10 h-10 flex items-center justify-center rounded-full shadow-md"
           >
             <Send className="w-5 h-5" />
           </button>
