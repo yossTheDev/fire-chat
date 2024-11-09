@@ -63,7 +63,7 @@ export default function ChatRoom() {
   };
 
   return (
-    <div className="flex justify-between flex-col w-full max-h-full overflow-hidden bg-gray-100 dark:bg-neutral-900 dark:border-neutral-950">
+    <div className="flex justify-between flex-col w-full max-h-full overflow-hidden bg-gray-100 bg-gradient-to-t from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900 dark:border-neutral-950">
       {/* Messages Container */}
       <div className="flex p-2 h-full flex-col overflow-y-auto max-h-[100%] mb-4 gap-4">
         {messages.map((message) => (
@@ -99,7 +99,7 @@ export default function ChatRoom() {
                 className={`flex flex-col gap-2 p-3  text-sm ${
                   message.uid === user?.uid
                     ? "bg-blue-500 text-white self-end rounded-tl-lg rounded-bl-lg rounded-br-lg ml-auto"
-                    : "bg-gray-300 text-black self-start rounded-tr-lg rounded-br-lg rounded-bl-lg"
+                    : "bg-neutral-400 text-black self-start rounded-tr-lg rounded-br-lg rounded-bl-lg"
                 }`}
               >
                 <span className="font-semibold block">
@@ -114,20 +114,22 @@ export default function ChatRoom() {
         <div ref={dummy}></div>
       </div>
 
-      <form onSubmit={handleSendMessage} className="flex p-2">
-        <input
-          type="text"
-          value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
-          placeholder="Escribe un mensaje..."
-          className="flex-1 p-2 border dark:border-neutral-950 rounded-l-lg dark:text-white"
-        />
-        <button
-          type="submit"
-          className="flex items-center text-sm gap-2 py-2 px-4 justify-center bg-blue-500 text-white rounded-r-lg hover:bg-blue-600"
-        >
-          <Send className="size-6"></Send>
-        </button>
+      <form onSubmit={handleSendMessage} className="flex items-center p-2">
+        <div className="relative flex flex-1">
+          <input
+            type="text"
+            value={newMessage}
+            onChange={(e) => setNewMessage(e.target.value)}
+            placeholder="Escribe un mensaje..."
+            className="w-full pl-4 pr-12 py-4 rounded-full dark:bg-neutral-900 dark:border-neutral-700 dark:text-white border border-gray-300"
+          />
+          <button
+            type="submit"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 hover:bg-blue-600 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-md"
+          >
+            <Send className="w-5 h-5" />
+          </button>
+        </div>
       </form>
     </div>
   );
