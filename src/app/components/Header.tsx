@@ -5,6 +5,14 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "../context/authProvider";
 import { ThemeToggle } from "./ThemeToggle";
 import { LogOut } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Header() {
   const { user, logout } = useAuth();
@@ -25,29 +33,32 @@ export default function Header() {
         <div className="flex items-center gap-3">
           {user ? (
             <>
-              <div className="flex gap-2 dark:bg-neutral-800 bg-neutral-200 items-center py-2 px-3 rounded-full">
-                {user.photoURL && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={user.photoURL}
-                    alt={user.displayName || "Usuario"}
-                    width={40}
-                    height={40}
-                    className="rounded-full"
-                  />
-                )}
-                <span className=" hidden sm:inline text-sm">
-                  {user.displayName || "Usuario"}
-                </span>
-
-                <button
-                  name="Logout"
-                  onClick={handleLogout}
-                  className="ml-4 px-3 py-1 text-sm  font-semibold rounded "
-                >
-                  <LogOut className="size-5"></LogOut>
-                </button>
-              </div>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <div className="flex gap-2 dark:bg-neutral-800 bg-neutral-200 items-center md:py-2 md:px-3 p-1 rounded-full cursor-pointer">
+                    {user.photoURL && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={user.photoURL}
+                        alt={user.displayName || "Usuario"}
+                        width={40}
+                        height={40}
+                        className="rounded-full"
+                      />
+                    )}
+                    <span className=" hidden sm:inline text-sm mr-2">
+                      {user.displayName || "Usuario"}
+                    </span>
+                  </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={handleLogout}>
+                    <LogOut className="size-5"></LogOut> Logout
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </>
           ) : (
             <Link href="/login" className="text-white hover:text-blue-200">
