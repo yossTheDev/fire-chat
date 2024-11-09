@@ -33,7 +33,7 @@ export function ThemeToggle() {
   return (
     <Button
       variant="ghost"
-      className="p-2 rounded-full dark:bg-neutral-800 bg-neutral-200 hover:bg-neutral-300 dark:hover:bg-neutral-700 transition duration-300"
+      className="p-2 rounded-full dark:bg-neutral-800 bg-neutral-200 dark:hover:text-neutral-100 hover:bg-neutral-300 dark:hover:bg-neutral-700 transition duration-300"
       size="icon"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
