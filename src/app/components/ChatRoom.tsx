@@ -81,12 +81,12 @@ export default function ChatRoom() {
                 {message.uid !== user?.uid && (
                   <>
                     {!message.avatar ? (
-                      <div className="flex size-12 text-2xl font-bold bg-neutral-800 rounded-full text-center justify-center items-center">
+                      <div className="flex size-10 text-2xl font-bold dark:text-neutral-700 text-neutral-400 bg-neutral-600 dark:bg-neutral-800 rounded-full text-center justify-center items-center">
                         <span> {message.displayName.slice(0, 1)}</span>
                       </div>
                     ) : (
                       <img
-                        className="size-12 rounded-full"
+                        className="size-10 rounded-full"
                         src={message.avatar}
                         alt="User Photo"
                       ></img>
@@ -98,7 +98,7 @@ export default function ChatRoom() {
               <div
                 className={`flex flex-col gap-2 p-3  text-sm ${
                   message.uid === user?.uid
-                    ? "bg-blue-500 text-white self-end rounded-tl-lg rounded-bl-lg rounded-br-lg"
+                    ? "bg-blue-500 text-white self-end rounded-tl-lg rounded-bl-lg rounded-br-lg ml-auto"
                     : "bg-gray-300 text-black self-start rounded-tr-lg rounded-br-lg rounded-bl-lg"
                 }`}
               >
