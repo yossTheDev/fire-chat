@@ -1,21 +1,8 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-import { AuthProvider } from "./context/authProvider";
-import Header from "./components/Header";
-import { ThemeProvider } from "next-themes";
 import { fontSans } from "@/lib/fonts";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
+import { AuthProvider } from "./context/authProvider";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -30,12 +17,11 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${fontSans.variable} ${fontSans.className} antialiased overflow-hidden h-screen flex flex-col`}
+        className={`${fontSans.variable} ${fontSans.className} antialiased max-h-screen h-screen`}
       >
         <ThemeProvider attribute="data-mode">
           <AuthProvider>
-            <Header></Header>
-            {children}
+            <main className="flex flex-col w-full h-full">{children}</main>
           </AuthProvider>
         </ThemeProvider>
       </body>

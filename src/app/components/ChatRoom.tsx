@@ -63,8 +63,9 @@ export default function ChatRoom() {
   };
 
   return (
-    <div className="flex flex-col h-full w-full p-4 bg-gray-100 dark:bg-neutral-900 dark:border-neutral-950 shadow-md">
-      <div className="flex-1 overflow-y-auto max-h-[80%] mb-4 space-y-2">
+    <div className="flex justify-between flex-col w-full max-h-full overflow-hidden bg-gray-100 dark:bg-neutral-900 dark:border-neutral-950">
+      {/* Messages Container */}
+      <div className="flex p-2 h-full flex-col overflow-y-auto max-h-[100%] mb-4 gap-4">
         {messages.map((message) => (
           <motion.div
             key={message.id}
@@ -112,7 +113,8 @@ export default function ChatRoom() {
 
         <div ref={dummy}></div>
       </div>
-      <form onSubmit={handleSendMessage} className="flex">
+
+      <form onSubmit={handleSendMessage} className="flex p-2">
         <input
           type="text"
           value={newMessage}

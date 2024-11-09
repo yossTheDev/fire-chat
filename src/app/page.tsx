@@ -1,11 +1,11 @@
 import ChatRoom from "./components/ChatRoom";
+import Header from "./components/Header";
 
 export default function Home() {
   return (
-    <div className="flex h-full w-full font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col w-full">
-        <ChatRoom></ChatRoom>
-      </main>
-    </div>
+    <>
+      <Header></Header>
+      <ChatRoom></ChatRoom>
+    </>
   );
 }
