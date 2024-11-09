@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   collection,
   addDoc,
@@ -29,6 +29,7 @@ export default function ChatRoom() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [newMessage, setNewMessage] = useState<string>("");
   const { user } = useAuth();
+  const dummy = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const q = query(collection(db, "messages"), orderBy("createdAt", "asc"));
@@ -55,6 +56,7 @@ export default function ChatRoom() {
         avatar: user.photoURL,
       });
       setNewMessage("");
+      dummy?.current?.scrollIntoView({ behavior: "smooth" });
     } catch (error) {
       console.error("Error al enviar el mensaje:", error);
     }
@@ -107,6 +109,8 @@ export default function ChatRoom() {
             </div>
           </motion.div>
         ))}
+
+        <div ref={dummy}></div>
       </div>
       <form onSubmit={handleSendMessage} className="flex">
         <input
