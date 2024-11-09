@@ -43,6 +43,12 @@ export default function ChatRoom() {
     return () => unsubscribe();
   }, []);
 
+  useEffect(() => {
+    if (messages) {
+      dummy.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]);
+
   const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (newMessage.trim() === "" || !user) return;
