@@ -65,15 +65,15 @@ export default function ChatRoom() {
   return (
     <div className="flex justify-between flex-col w-full max-h-full h-full overflow-hidden bg-gray-100 bg-gradient-to-t from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900 dark:border-neutral-950">
       {/* Messages Container */}
-      <div className="flex px-4 pt-2 h-full flex-col overflow-y-auto max-h-[100%] mb-4 gap-4">
+      <div className="flex px-4 pt-2 h-full flex-col overflow-y-auto overflow-x-hidden max-h-[100%] mb-4 gap-4">
         {messages.map((message) => (
           <motion.div
             key={message.id}
             initial={{
-              opacity: 0,
               x: message.uid === user?.uid ? 50 : -50,
             }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ x: 0, scale: 1 }}
+            viewport={{ margin: "-10%" }}
             transition={{ type: "spring", stiffness: 70, damping: 12 }}
           >
             <div className="flex gap-2">
