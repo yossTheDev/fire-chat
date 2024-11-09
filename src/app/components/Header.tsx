@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import Link from "next/link";
@@ -26,9 +27,16 @@ export default function Header() {
   return (
     <header className="bg-white dark:bg-neutral-900  p-4 drop-shadow-md dark:drop-shadow-sm dark:text-white text-neutral-800">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold">
-          FireChat
-        </Link>
+        <div className="flex gap-2 items-center">
+          <img
+            className="size-8"
+            src="/FireChatIcon.svg"
+            alt="FireChat Logo"
+          ></img>
+          <Link href="/" className="text-2xl font-bold">
+            FireChat
+          </Link>
+        </div>
 
         <div className="flex items-center gap-3">
           {user ? (
