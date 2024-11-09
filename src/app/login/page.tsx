@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // app/login/page.tsx
 "use client";
 
@@ -27,11 +28,21 @@ export default function Page() {
   if (loading) return <p className="text-center mt-10">Cargando...</p>;
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="p-6 max-w-md w-full bg-white rounded-md shadow-md">
-        <h2 className="text-2xl font-semibold text-center text-gray-700">
-          Iniciar Sesión
+    <div className="flex flex-col items-center justify-center h-screen dark:bg-neutral-900">
+      <div className="flex flex-col items-center font-bold text-neutral-900">
+        <img
+          className="size-24"
+          src="/FireChatIcon.svg"
+          alt="FireChat Logo"
+        ></img>
+
+        <h1 className="text-5xl mt-4">Bienvenido</h1>
+        <h2 className="text-3xl">
+          a <span className="text-[#FF8239]">FireChat</span>
         </h2>
+      </div>
+
+      <div className="p-6 max-w-md w-full">
         <p className="mt-4 text-gray-500 text-center">
           Inicia sesión usando tu cuenta de Google
         </p>
