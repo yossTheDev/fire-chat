@@ -98,7 +98,7 @@ export default function ChatRoom() {
               <div
                 className={`flex flex-col gap-2 p-3  text-sm ${
                   message.uid === user?.uid
-                    ? "bg-[#FF8239] text-white self-end rounded-tl-lg rounded-bl-lg rounded-br-lg ml-auto"
+                    ? "bg-[#ff833c] text-white self-end rounded-tl-lg rounded-bl-lg rounded-br-lg ml-auto"
                     : "dark:bg-neutral-300 bg-neutral-400 text-black self-start rounded-tr-lg rounded-br-lg rounded-bl-lg"
                 }`}
               >
