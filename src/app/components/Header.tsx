@@ -36,7 +36,7 @@ export default function Header() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <div className="flex gap-2 dark:bg-neutral-800 bg-neutral-200 items-center md:py-2 md:px-3 p-1 rounded-full cursor-pointer">
-                    {user.photoURL && (
+                    {user.photoURL ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={user.photoURL}
@@ -45,6 +45,10 @@ export default function Header() {
                         height={40}
                         className="rounded-full"
                       />
+                    ) : (
+                      <div className="flex size-10 text-2xl font-bold dark:text-neutral-700 text-neutral-700 bg-neutral-400 dark:bg-neutral-900 rounded-full text-center justify-center items-center">
+                        <span> {user.displayName?.slice(0, 1)}</span>
+                      </div>
                     )}
                     <span className=" hidden sm:inline text-sm mr-2">
                       {user.displayName || "Usuario"}
