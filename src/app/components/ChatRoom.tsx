@@ -65,7 +65,7 @@ export default function ChatRoom() {
   return (
     <div className="flex justify-between flex-col w-full max-h-full h-full overflow-hidden bg-gray-100 bg-gradient-to-t from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900 dark:border-neutral-950">
       {/* Messages Container */}
-      <div className="flex p-2 h-full flex-col overflow-y-auto max-h-[100%] mb-4 gap-4">
+      <div className="flex px-4 h-full flex-col overflow-y-auto max-h-[100%] mb-4 gap-4">
         {messages.map((message) => (
           <motion.div
             key={message.id}
@@ -98,8 +98,8 @@ export default function ChatRoom() {
               <div
                 className={`flex flex-col gap-2 p-3  text-sm ${
                   message.uid === user?.uid
-                    ? "bg-blue-500 text-white self-end rounded-tl-lg rounded-bl-lg rounded-br-lg ml-auto"
-                    : "bg-neutral-400 text-black self-start rounded-tr-lg rounded-br-lg rounded-bl-lg"
+                    ? "bg-[#FF8239] text-white self-end rounded-tl-lg rounded-bl-lg rounded-br-lg ml-auto"
+                    : "dark:bg-neutral-300 bg-neutral-400 text-black self-start rounded-tr-lg rounded-br-lg rounded-bl-lg"
                 }`}
               >
                 <span className="font-semibold block">
